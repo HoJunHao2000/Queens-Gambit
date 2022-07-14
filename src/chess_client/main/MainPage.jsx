@@ -71,7 +71,7 @@ export default function MainPage() {
 
             <hr />
             <p>Invite your friend over using this link</p>
-            <div>http://localhost:3000/?id={gameID}</div>
+            <div>https://online-ai-chess.netlify.app/?id={gameID}</div>
           </div>
         </div>
       </div>
