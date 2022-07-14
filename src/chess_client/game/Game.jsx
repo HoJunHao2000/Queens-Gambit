@@ -17,7 +17,7 @@ import "./game-styles.css";
 import io from "socket.io-client";
 import qs from "query-string";
 
-const socket = io("localhost:4000");
+const socket = io("https://socketio-chess-server.herokuapp.com/");
 
 export default function Game() {
   const { current: game } = useRef(new Chess());

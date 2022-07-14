@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
-const PORT = 4000;
+const PORT = process.env.PORT;
 const io = socketio(server);
 
 io.on("connection", (socket) => {
