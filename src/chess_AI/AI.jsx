@@ -331,11 +331,6 @@ export default function AI() {
       window.setTimeout(makeBestMove("b"), 1000);
     }
 
-    setMoveSquares({
-      [sourceSquare]: { backgroundColor: "rgba(255, 255, 0, 0.4)" },
-      [targetSquare]: { backgroundColor: "rgba(255, 255, 0, 0.4)" },
-    });
-
     return true;
   }
 
@@ -399,7 +394,15 @@ export default function AI() {
       setOverVisible(true);
       return;
     }
-    return move === null;
+    if (move !== null) {
+      setMoveSquares({
+        [sourceSquare]: { backgroundColor: "rgba(255, 255, 0, 0.4)" },
+        [targetSquare]: { backgroundColor: "rgba(255, 255, 0, 0.4)" },
+      });
+      return false;
+    }
+
+    return true;
   }
 
   return (
