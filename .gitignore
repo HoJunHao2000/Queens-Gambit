@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/src/chess_server
 /.pnp
 .pnp.js
 
