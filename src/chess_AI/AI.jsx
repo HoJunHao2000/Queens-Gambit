@@ -316,7 +316,13 @@ export default function AI() {
     return [bestMove, bestMoveValue];
   }
 
-  function onDrop(sourceSquare, targetSquare) {
+  function delay(milliseconds) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, milliseconds);
+    });
+  }
+
+  async function onDrop(sourceSquare, targetSquare) {
     if (game.turn() !== "w") {
       return false;
     }
@@ -328,6 +334,7 @@ export default function AI() {
 
     if (!gameOver) {
       // Make the best move for black
+      await delay(1000);
       window.setTimeout(makeBestMove("b"), 1000);
     }
 
@@ -389,6 +396,7 @@ export default function AI() {
       to: targetSquare,
       promotion: p,
     });
+
     const [gameOver, status] = getGameOverState(game);
     if (gameOver) {
       setOverVisible(true);
